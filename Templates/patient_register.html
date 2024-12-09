@@ -1,0 +1,85 @@
+
+<!doctype html>
+{% load crispy_forms_tags %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <!-- Section: Design Block -->
+<section class=" text-center text-lg-start">
+  <style>
+    .rounded-t-5 {
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+    }
+
+    @media (min-width: 992px) {
+      .rounded-tr-lg-0 {
+        border-top-right-radius: 0;
+      }
+
+      .rounded-bl-lg-5 {
+        border-bottom-left-radius: 0.5rem;
+      }
+    }
+  </style>
+  <div class="card mb-3">
+    <div class="row g-0 d-flex align-items-center">
+      <div class="col-lg-4 d-none d-lg-flex">
+        <img src="data:image/jpeg;base64,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" alt="Trendy Pants and Shoes" style="height:800px"
+          class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5"
+        />
+      </div>
+      <div class="col-lg-8">
+        <div class="card-body py-5 px-md-5">
+
+          <form method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              {{form1|crispy}}
+              {{form2|crispy}}<!-- Email input -->
+<!--            <div data-mdb-input-init class="form-outline mb-4">-->
+<!--              <input type="text" id="form2Example1" class="form-control" />-->
+<!--              <label class="form-label" for="form2Example1">Username</label>-->
+<!--            </div>-->
+
+<!--            &lt;!&ndash; Password input &ndash;&gt;-->
+<!--            <div data-mdb-input-init class="form-outline mb-4">-->
+<!--              <input type="password" id="form2Example2" class="form-control" />-->
+<!--              <label class="form-label" for="form2Example2">Password</label>-->
+<!--            </div>-->
+
+<!--            &lt;!&ndash; 2 column grid layout for inline styling &ndash;&gt;-->
+<!--            <div class="row mb-4">-->
+<!--              <div class="col d-flex justify-content-center">-->
+<!--                &lt;!&ndash; Checkbox &ndash;&gt;-->
+<!--                <div class="form-check">-->
+<!--                  <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />-->
+<!--                  <label class="form-check-label" for="form2Example31"> Remember me </label>-->
+<!--                </div>-->
+<!--              </div>-->
+
+<!--              <div class="col">-->
+<!--                &lt;!&ndash; Simple link &ndash;&gt;-->
+<!--                <a href="#!">Forgot password?</a>-->
+<!--              </div>-->
+<!--            </div>-->
+
+<!--            &lt;!&ndash; Submit button &ndash;&gt;-->
+            <button  type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Sign in</button>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Section: Design Block -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>

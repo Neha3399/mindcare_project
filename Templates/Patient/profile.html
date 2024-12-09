@@ -1,0 +1,31 @@
+{% extends 'Patient/Patient_base.html' %}
+{% load crispy_forms_tags %}
+{% block image %}
+
+
+
+<div class="card" style="width: 18rem;">
+  <img src="{{form.document.url}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{form.Name}}</h5>
+
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">{{form.Age}}</li>
+    <li class="list-group-item">{{form.Gender}}</li>
+    <li class="list-group-item">{{form.email}}</li>
+    <li class="list-group-item">{{form.address}}</li>
+    <li class="list-group-item">{{form.occupation}}</li>
+    <li class="list-group-item">{{form.phone}}</li>
+<li><a href="{% url 'profile_update' form.id %}" class="btn btn-primary " tabindex="-1"  aria-disabled="true">Edit</a></li>
+  </ul>
+
+</div>
+
+
+
+
+{% endblock %}
+
+
+

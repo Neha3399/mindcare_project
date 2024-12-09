@@ -1,0 +1,56 @@
+
+
+
+{% extends 'admin/Admin_base.html' %}
+
+
+
+{% block image %}
+
+
+
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Sl no</th>
+      <th scope="col">Name</th>
+      <th scope="col">Age</th>
+      <th scope="col">Title</th>
+      <th scope="col">Licence_number</th>
+      <th scope="col">Speicality</th>
+       <th scope="col">experience</th>
+       <th scope="col">Education</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Email</th>
+       <th scope="col">Address</th>
+       <th scope="col">Memberships</th>
+       <th scope="col">session</th>
+       <th scope="col">Frequency</th>
+    </tr>
+  </thead>
+  <tbody>
+   {% for i in data %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{i.Name}}</td>
+      <td>{{i.Age}}</td>
+      <td>{{i.Professional_title}}</td>
+      <td>{{i.License_number}}</td>
+      <td>{{i.Speciality}}</td>
+      <td>{{i.Year_of_experience}}</td>
+      <td>{{i.Education}}</td>
+      <td>{{i.phone}}</td>
+      <td>{{i.email}}</td>
+      <td>{{i.address}}</td>
+      <td>{{i.Professional_membership}}</td>
+      <td>{{i.Session}}</td>
+      <td>{{i.frequency}}</td>
+      <td><a href="{% url 'delete' i.id %}" class="btn btn-primary " tabindex="-1" role="button" aria-disabled="true">delete</a></td>
+      <td><a href="{% url 'update' i.id %}" class="btn btn-primary " tabindex="-1"  aria-disabled="true">update</a></td>
+    </tr>
+    {% endfor %}
+   </tbody>
+</table>
+     {% endblock %}

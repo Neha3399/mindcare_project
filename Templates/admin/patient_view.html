@@ -1,0 +1,53 @@
+
+
+
+{% extends 'admin/Admin_base.html' %}
+
+
+
+{% block image %}
+
+
+
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Sl no</th>
+      <th scope="col">Name</th>
+      <th scope="col">Age</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Email</th>
+      <th scope="col">Address</th>
+       <th scope="col">Merital Status</th>
+      <th scope="col">Occupation</th>
+      <th scope="col">Reason for Counsiling</th>
+       <th scope="col">Counsiling approch</th>
+       <th scope="col">phone</th>
+
+    </tr>
+  </thead>
+  <tbody>
+   {% for i in data %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{i.Name}}</td>
+      <td>{{i.Age}}</td>
+      <td>{{i.Gender}}</td>
+      <td>{{i.email}}</td>
+      <td>{{i.address}}</td>
+      <td>{{i.Merital_status}}</td>
+      <td>{{i.occupation}}</td>
+      <td>{{i.Reason_for_seeking_counsiling}}</td>
+      <td>{{i.Preferred_counsiling_approch}}</td>
+         <td>{{i.phone}}</td>
+
+
+      <td><a href="{% url 'delete2' i.id %}" class="btn btn-primary " tabindex="-1" role="button" aria-disabled="true">delete</a></td>
+      <td><a href="{% url 'update2' i.id %}" class="btn btn-primary " tabindex="-1"  aria-disabled="true">update</a></td>
+    </tr>
+    {% endfor %}
+   </tbody>
+</table>
+     {% endblock %}
